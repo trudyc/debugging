@@ -1,0 +1,18 @@
+def char_count(list)
+  @letters = []
+  list.each do |word|
+    @letters << word.split('')
+    @letters.flatten!
+  end
+  count_pile = Hash.new(0)
+  @letters.each do |letter|
+    count_pile.store(letter, count_pile[letter] += 1)
+  end
+  puts count_pile
+    
+end
+
+# Why the long face(error)? 
+# 1. This should return count of each letter in the list
+
+puts char_count(['apples', 'oranges', 'hipsters', 'are', 'same'])
